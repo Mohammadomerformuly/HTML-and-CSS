@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creating Effects with CSS</title>
+    <link rel="stylesheet" href="CSS/style.css">
+</head>
+<body>
+    <!-- Navigation bar -->
+    <nav class="nav-bar">
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li class="drop">
+                <a href="#">Images</a>
+                <div class="rollover-menu">
+                    <a href="#image1">Image 1</a>
+                    <a href="#image2">Image 2</a>
+                    <a href="#image3">Image 3</a>
+                </div>
+            </li>
+        </ul>
+    </nav>
+
+    <!-- Images section -->
+    <section>
+        <!-- Image 1 -->
+        <div id="image1" class="image-container">
+            <div class="overlay">
+                <img src="images/Japan-1.jpg" alt="A red torii gate in a Japanese forest">
+            </div>
+        </div>
+
+        <!-- Image 2 -->
+        <div id="image2" class="image-container">
+            <img src="images/Japan-2.jpg" class="zoom" alt="Traditional Japanese street at sunset">
+        </div>
+
+        <!-- Image 3 -->
+        <div id="image3" class="image-container">
+            <div class="circle">
+                <img src="images/Japan-3.jpg" alt="Mount Fuji with cherry blossoms and a lake">
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer section -->
+    <footer>
+        <div class="footer-text">
+            <p>The Tech Academy &copy;</p>
+        </div>
+    </footer>
+</body>
+</html>

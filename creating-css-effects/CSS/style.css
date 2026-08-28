@@ -1,0 +1,183 @@
+/* Navbar */
+.nav-bar {
+    position: sticky;
+    top: 0;
+    z-index: 4; /* Keeps the navigation bar on top of the page elements. */
+}
+
+ul {
+    list-style-type: none; /* Removes the default bullet-point styling from list elements. */
+    background-color: #363636;
+    margin: -10px -10px 0 -10px; /* Top, right, bottom and left. */
+    overflow: hidden; /* Hides excess margin space and prevents a horizontal scrollbar. */
+}
+
+a {
+    display: block;
+    font-family: Calibri, sans-serif;
+    font-size: 23px;
+    font-weight: 600;
+    color: white;
+    text-decoration: none; /* Removes the default underline decoration from linked text. */
+    text-transform: uppercase; /* Transforms text to uppercase regardless of HTML letter case. */
+    width: 100px;
+    height: 30px;
+    text-align: center;
+    transition: background-color 0.4s ease-out;
+}
+
+/* Navbar Rollover Effect */
+a:hover {
+    background-color: rgb(228, 159, 0);
+    color: rgb(49, 49, 49);
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.7);
+    transition: background-color 0.3s ease-in;
+}
+
+/* Styles and hides the anchor links inside the Images-link div element. */
+.rollover-menu {
+    display: none;
+    position: absolute;
+    background-color: white;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+.drop:hover .rollover-menu {
+    display: block;
+}
+
+/* Specifically styles the anchor elements inside the div tag containing the rollover-menu class selector. */
+.rollover-menu a {
+    color: #363636;
+}
+
+/* Specifically styles the rollover-menu anchors when the hover effect is triggered. */
+.rollover-menu a:hover {
+    color: white;
+}
+
+/* Specifically styles the first anchor-element child inside the rollover-menu div. */
+.rollover-menu a:nth-child(1):hover {
+    background-color: rgb(117, 20, 20);
+}
+
+/* Specifically styles the second anchor-element child inside the rollover-menu div. */
+.rollover-menu a:nth-child(2):hover {
+    background-color: rgb(87, 7, 7);
+}
+
+/* Specifically styles the third anchor-element child inside the rollover-menu div. */
+.rollover-menu a:nth-child(3):hover {
+    background-color: rgb(48, 2, 2);
+}
+
+/* Footer */
+footer {
+    background-color: #363636;
+    margin: 30px -10px -10px -10px; /* Top, right, bottom and left. */
+    overflow: hidden; /* Hides excess margin space and prevents a horizontal scrollbar. */
+    height: 70px;
+}
+
+/* Styles the text inside the footer. */
+.footer-text {
+    font-family: Calibri, sans-serif;
+    font-size: 23px;
+    font-weight: 400;
+    color: rgb(228, 159, 0);
+    text-align: center;
+}
+
+/* Images */
+img {
+    width: 700px;
+    height: 550px;
+}
+
+/* Creates a container in which each image is held. */
+.image-container {
+    display: flex;
+    justify-content: center;
+    padding-top: 120px;
+}
+
+/* Adds extra document space so the Image 3 bookmark can keep the same top spacing. */
+#image3 {
+    padding-bottom: 120px;
+}
+
+/* Styling effects for Image 1 */
+.overlay {
+    position: relative;
+    overflow: hidden;
+}
+
+.overlay::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-color: rgba(117, 20, 20, 0.7);
+    opacity: 0;
+    transition: opacity 0.5s ease-out;
+}
+
+.overlay:hover::after {
+    opacity: 1;
+}
+
+/* Styling effects for Image 2 */
+.zoom {
+    transform: scale(1); /* Sets the base size of Image 2 for the zoom-in effect. */
+    transition: transform 0.5s ease-out; /* Smoothly returns the image to its original size. */
+    z-index: 3; /* Keeps Image 2 behind the navigation bar. */
+}
+
+/* Creates a zoom effect on Image 2. */
+.zoom:hover {
+    transform: scale(1.5); /* Grows Image 2 by half its original size. */
+    transition: transform 0.5s ease-out;
+}
+
+/* Styling effects for Image 3 */
+/* Creates the sub-position for the burst animation and hides its overflow. */
+.circle {
+    position: relative;
+    margin: 0;
+    overflow: hidden;
+}
+
+/* Sets the burst-animation shape and its position before hover is activated. */
+.circle::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%; /* Creates a circle or oval shape. */
+    opacity: 0; /* Keeps the shape invisible until the hover animation begins. */
+    transform: translate(-50%, -50%);
+    z-index: 1;
+}
+
+/* Triggers the burst animation on the circle pseudo-element. */
+.circle:hover::before {
+    animation: burst 1s;
+}
+
+/* Creates a growing-circle effect. */
+@keyframes burst {
+    0% {
+        /* The start of the animation. */
+        opacity: 0.2;
+        background-color: rgb(224, 224, 224);
+    }
+
+    100% {
+        /* The end of the animation. */
+        opacity: 0.7;
+        background-color: rgb(224, 224, 224);
+        width: 300%;
+        height: 300%;
+    }
+}
